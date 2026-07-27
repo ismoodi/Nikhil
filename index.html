@@ -85,6 +85,15 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
+
+        /* Custom Horizontal Scrollbar for Mobile Row Layout */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
     </style>
 </head>
 <body class="relative min-h-screen">
@@ -159,7 +168,7 @@
                 </div>
             </div>
 
-            <!-- Right Hero Preview: Replaced pid2.mp4 with A (1).mp4 -->
+            <!-- Right Hero Preview -->
             <div class="lg:col-span-5 relative">
                 <div class="glass-card glass-card-interactive p-4 relative z-10 overflow-hidden">
                     <div class="relative w-full aspect-[9/16] rounded-xl overflow-hidden bg-black/80 shadow-inner flex items-center justify-center group cursor-pointer" onclick="toggleMute(this)">
@@ -182,18 +191,19 @@
         </div>
     </section>
 
-    <!-- 4 Uploaded Reels Grid -->
+    <!-- 4 Uploaded Reels Grid (Horizontal Row on Mobile, Grid on Laptop) -->
     <section id="reels" class="py-16 px-6 max-w-7xl mx-auto z-10 relative">
         <div class="text-center max-w-2xl mx-auto mb-12">
             <h2 class="text-xs font-bold uppercase tracking-widest text-purple-400 mb-2">Portfolio Samples</h2>
             <p class="text-3xl sm:text-4xl font-extrabold text-white">Featured Reels</p>
-            <p class="text-gray-400 text-sm mt-2">Tap any video to toggle audio on/off</p>
+            <p class="text-gray-400 text-sm mt-2">Swipe horizontally on mobile to view all reels</p>
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Row Container: Flex Row with Horizontal Scroll on Mobile -->
+        <div class="flex sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-6 overflow-x-auto no-scrollbar pb-4 snap-x snap-mandatory">
             
             <!-- Reel 1: A (1).mp4 -->
-            <div class="glass-card glass-card-interactive p-3 flex flex-col justify-between">
+            <div class="glass-card glass-card-interactive p-3 flex-none w-[260px] sm:w-auto flex flex-col justify-between snap-center">
                 <div class="relative aspect-[9/16] rounded-xl overflow-hidden bg-black/80 group cursor-pointer" onclick="toggleMute(this)">
                     <video class="w-full h-full object-cover reel-video" autoplay loop muted playsinline webkit-playsinline preload="auto">
                         <source src="A (1).mp4" type="video/mp4">
@@ -210,7 +220,7 @@
             </div>
 
             <!-- Reel 2: client2.mp4 -->
-            <div class="glass-card glass-card-interactive p-3 flex flex-col justify-between">
+            <div class="glass-card glass-card-interactive p-3 flex-none w-[260px] sm:w-auto flex flex-col justify-between snap-center">
                 <div class="relative aspect-[9/16] rounded-xl overflow-hidden bg-black/80 group cursor-pointer" onclick="toggleMute(this)">
                     <video class="w-full h-full object-cover reel-video" autoplay loop muted playsinline webkit-playsinline preload="auto">
                         <source src="client2.mp4" type="video/mp4">
@@ -227,7 +237,7 @@
             </div>
 
             <!-- Reel 3: ipunx.mp4 -->
-            <div class="glass-card glass-card-interactive p-3 flex flex-col justify-between">
+            <div class="glass-card glass-card-interactive p-3 flex-none w-[260px] sm:w-auto flex flex-col justify-between snap-center">
                 <div class="relative aspect-[9/16] rounded-xl overflow-hidden bg-black/80 group cursor-pointer" onclick="toggleMute(this)">
                     <video class="w-full h-full object-cover reel-video" autoplay loop muted playsinline webkit-playsinline preload="auto">
                         <source src="ipunx.mp4" type="video/mp4">
@@ -244,7 +254,7 @@
             </div>
 
             <!-- Reel 4: huhhhh.mp4 -->
-            <div class="glass-card glass-card-interactive p-3 flex flex-col justify-between">
+            <div class="glass-card glass-card-interactive p-3 flex-none w-[260px] sm:w-auto flex flex-col justify-between snap-center">
                 <div class="relative aspect-[9/16] rounded-xl overflow-hidden bg-black/80 group cursor-pointer" onclick="toggleMute(this)">
                     <video class="w-full h-full object-cover reel-video" autoplay loop muted playsinline webkit-playsinline preload="auto">
                         <source src="huhhhh.mp4" type="video/mp4">
